@@ -61,6 +61,10 @@ const withReactNativeFbads = (config) => {
   return withFacebookManifest(config);
 };
 
-const pkg = require('react-native-fbads/package.json');
+const pkg = require('react-native-fbads-custom/package.json');
 
-export default createRunOncePlugin(withReactNativeFbads, pkg.name, pkg.version);
+exports.default = (0, createRunOncePlugin)(
+  withReactNativeFbads,
+  pkg.name,
+  pkg.version
+);
