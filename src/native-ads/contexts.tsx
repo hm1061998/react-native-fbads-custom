@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 export type ComponentOrClass = React.ComponentClass<any> | React.Component;
 
@@ -24,24 +24,20 @@ const defaultValue = {
   },
   unregister: () => {
     throw new Error('Stub!');
-  }
+  },
 };
 
 // tslint:disable-next-line:variable-name
-export const TriggerableContext = React.createContext<
-  TriggerableContextValueType
->(defaultValue);
+export const TriggerableContext =
+  React.createContext<TriggerableContextValueType>(defaultValue);
 // tslint:disable-next-line:variable-name
-export const MediaViewContext = React.createContext<MediaViewContextValueType>(
-  defaultValue
-);
+export const MediaViewContext =
+  React.createContext<MediaViewContextValueType>(defaultValue);
 
 // tslint:disable-next-line:variable-name
-export const AdIconViewContext = React.createContext<
-  AdIconViewContextValueType
->(defaultValue);
+export const AdIconViewContext =
+  React.createContext<AdIconViewContextValueType>(defaultValue);
 
 // tslint:disable-next-line:variable-name
-export const AdChoicesViewContext = React.createContext<
-  AdChoicesViewContextValueType
->('');
+export const AdChoicesViewContext =
+  React.createContext<AdChoicesViewContextValueType>('');

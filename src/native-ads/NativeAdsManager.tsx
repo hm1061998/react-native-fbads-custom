@@ -11,11 +11,11 @@ const EVENT_DID_BECOME_INVALID = 'AdsManagerDidBecomeInvalid';
 type AdManagerCachePolicy = 'none' | 'icon' | 'image' | 'all';
 
 export default class NativeAdsManager {
-  private placementId: string;
+  placementId: string;
 
   // Indicates whether AdsManager is ready to serve ads
-  private isValid: boolean = false;
-  private eventEmitter: EventEmitter = new EventEmitter();
+  isValid: boolean = false;
+  eventEmitter: EventEmitter = new EventEmitter();
 
   static async registerViewsForInteractionAsync(
     nativeAdViewTag: number,
@@ -58,7 +58,7 @@ export default class NativeAdsManager {
    * Listens for AdManager state changes and updates internal state. When it changes,
    * callers will be notified of a change
    */
-  private listenForStateChanges() {
+  listenForStateChanges() {
     nativeAdEmitter.addListener(
       'CTKNativeAdsManagersChanged',
       (managers: Record<string, boolean>) => {
@@ -76,7 +76,7 @@ export default class NativeAdsManager {
    * Listens for AdManager errors. When error occures,
    * callers will be notified of it
    */
-  private listenForErrors() {
+  listenForErrors() {
     nativeAdEmitter.addListener('onAdError', (error: string) => {
       this.isValid = false;
       this.eventEmitter.emit(EVENT_DID_BECOME_INVALID, error);
@@ -89,7 +89,7 @@ export default class NativeAdsManager {
    * If manager already became valid, it will call the function w/o registering
    * handler for events
    */
-  onAdsLoaded(func: Function): EventSubscription {
+  onAdsLoaded(func: () => void): EventSubscription {
     if (this.isValid) {
       setTimeout(func);
       return {

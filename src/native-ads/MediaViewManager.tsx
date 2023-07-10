@@ -15,9 +15,9 @@ export const NativeMediaView =
 class MediaViewChild extends React.Component<
   MediaViewProps & MediaViewContextValueType
 > {
-  private mediaView: ComponentOrClass | null = null;
+  mediaView: ComponentOrClass | null = null;
 
-  private handleMediaViewMount = (ref: ComponentOrClass | null) => {
+  handleMediaViewMount = (ref: ComponentOrClass | null) => {
     if (this.mediaView) {
       this.props.unregister();
       this.mediaView = null;

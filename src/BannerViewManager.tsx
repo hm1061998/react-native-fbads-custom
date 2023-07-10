@@ -7,7 +7,7 @@ import {
 
 type AdType = 'large' | 'standard';
 
-interface NativeBannerViewProps {
+export interface NativeBannerViewProps {
   size: number;
   onAdPress: Function;
   onAdError: Function;
@@ -16,7 +16,7 @@ interface NativeBannerViewProps {
   placementId: string;
 }
 
-interface BannerViewProps {
+export interface BannerViewProps {
   type: AdType;
   placementId: string;
   onPress: Function;

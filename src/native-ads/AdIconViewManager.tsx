@@ -16,9 +16,9 @@ export const NativeAdIconView =
 class AdIconViewChild extends React.Component<
   AdIconViewProps & AdIconViewContextValueType
 > {
-  private iconView: ComponentOrClass | null = null;
+  iconView: ComponentOrClass | null = null;
 
-  private handleAdIconViewRef = (ref: ComponentOrClass | null) => {
+  handleAdIconViewRef = (ref: ComponentOrClass | null) => {
     if (this.iconView) {
       this.props.unregister();
       this.iconView = null;

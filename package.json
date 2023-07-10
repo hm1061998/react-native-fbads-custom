@@ -144,7 +144,8 @@
   },
   "eslintIgnore": [
     "node_modules/",
-    "lib/"
+    "lib/",
+    "src/native-ads/withNativeAd"
   ],
   "prettier": {
     "quoteProps": "consistent",

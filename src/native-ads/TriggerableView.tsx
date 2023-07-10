@@ -8,9 +8,9 @@ import {
 class TriggerableViewChild extends React.Component<
   TextProps & TriggerableContextValueType
 > {
-  private wrapperRef: View | null = null;
+  wrapperRef: View | null = null;
 
-  private handleWrapperRef = (ref: View) => {
+  handleWrapperRef = (ref: View) => {
     if (this.wrapperRef) {
       this.props.unregister(this.wrapperRef);
       this.wrapperRef = null;
