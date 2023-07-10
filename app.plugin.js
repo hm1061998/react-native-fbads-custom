@@ -1,1 +1,1 @@
-module.exports = require('./plugins/withReactNativeFbadss');
+module.exports = require('./plugins/withReactNativeFbads');
