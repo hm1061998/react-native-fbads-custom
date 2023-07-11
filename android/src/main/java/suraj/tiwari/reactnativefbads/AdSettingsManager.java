@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.facebook.FacebookSdk;
 import com.facebook.ads.AdSettings;
+import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -32,6 +33,11 @@ public class AdSettingsManager extends ReactContextBaseJavaModule implements Lif
         return "CTKAdSettingsManager";
     }
 
+    @ReactMethod
+    public void init() {
+      ReactApplicationContext reactContext = this.getReactApplicationContext();
+      AudienceNetworkAds.initialize(reactContext);
+    }
     @ReactMethod
     public void addTestDevice(String deviceHash) {
         AdSettings.addTestDevice(deviceHash);

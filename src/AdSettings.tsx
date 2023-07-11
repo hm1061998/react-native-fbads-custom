@@ -28,6 +28,10 @@ export default {
   /**
    * Registers given device with `deviceHash` to receive test Facebook ads.
    */
+  init() {
+    CTKAdSettingsManager.init();
+  },
+
   addTestDevice(deviceHash: string) {
     CTKAdSettingsManager.addTestDevice(deviceHash);
   },

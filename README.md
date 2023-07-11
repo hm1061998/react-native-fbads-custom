@@ -1,4 +1,4 @@
-# react-native-fbads [![npm version][version-badge]][package]
+# react-native-fbads-custom [![npm version][version-badge]][package]
 
 [![chat][chat-badge]][chat]
 
@@ -54,13 +54,13 @@ You can get IDFA from the iOS device using a third party app from the App Store.
 Add the package to your project using either yarn:
 
 ```bash
-yarn add react-native-fbads
+yarn add react-native-fbads-custom
 ```
 
 or npm:
 
 ```bash
-npm install --save react-native-fbads
+npm install --save react-native-fbads-custom
 ```
 
 ## Linking
@@ -77,7 +77,7 @@ CLI autolink feature links the module while building the app.
 Link the native dependencies:
 
 ```bash
-$ react-native link react-native-fbads
+$ react-native link react-native-fbads-custom
 ```
 
 </details>
@@ -89,7 +89,7 @@ $ react-native link react-native-fbads
 > First install the package with yarn, npm, or [`expo install`](https://docs.expo.io/workflow/expo-cli/#expo-install).
 
 ```sh
-expo install react-native-fbsdk-next react-native-fbads
+expo install react-native-fbsdk-next react-native-fbads-custom
 ```
 
 After installing this npm package, add the [config plugin](https://docs.expo.io/guides/config-plugins/) to the [`plugins`](https://docs.expo.io/versions/latest/config/app/#plugins) array of your `app.json` or `app.config.js`:
@@ -110,7 +110,7 @@ After installing this npm package, add the [config plugin](https://docs.expo.io/
           "iosUserTrackingPermission": "This identifier will be used to deliver personalized ads to you."
         }
       ],
-      "react-native-fbads"
+      "react-native-fbads-custom"
     ]
   }
 }
@@ -139,7 +139,7 @@ On android, you'll need to add the following to your `AndroidManifest.xml`:
 Usage:
 
 ```js
-import { InterstitialAdManager } from 'react-native-fbads';
+import { InterstitialAdManager } from 'react-native-fbads-custom';
 
 InterstitialAdManager.showAd(placementId)
   .then((didClick) => {})
@@ -151,7 +151,7 @@ The `showAd` method returns a promise that will be resolves once the ad has been
 If you want to preload the ad and show it later you can use this instead:
 
 ```js
-import { InterstitialAdManager } from 'react-native-fbads';
+import { InterstitialAdManager } from 'react-native-fbads-custom';
 
 InterstitialAdManager.preloadAd(placementId)
   .then((didClick) => {})
@@ -170,7 +170,7 @@ Native Ads allow you to create custom ad layouts that match your app. Before pro
 #### 1. Create the ads manager
 
 ```js
-import { NativeAdsManager } from 'react-native-fbads';
+import { NativeAdsManager } from 'react-native-fbads-custom';
 
 const adsManager = new NativeAdsManager(placementId, numberOfAdsToRequest);
 ```
@@ -209,7 +209,7 @@ import {
   MediaView,
   AdChoicesView,
   TriggerableView,
-} from 'react-native-fbads';
+} from 'react-native-fbads-custom';
 class AdComponent extends React.Component {
   render() {
     return (
@@ -236,7 +236,7 @@ You can use the included `AdChoicesView` component and style it to your liking.
 #### Example usage
 
 ```js
-import { AdChoicesView } from 'react-native-fbads';
+import { AdChoicesView } from 'react-native-fbads-custom';
 
 <AdChoicesView style={{ position: 'absolute', left: 0, top: 0 }} />;
 ```
@@ -280,7 +280,7 @@ Banners are available in 2 sizes:
 - `large` (BANNER_HEIGHT_90)
 
 ```js
-import { BannerView } from 'react-native-fbads';
+import { BannerView } from 'react-native-fbads-custom';
 
 function ViewWithBanner(props) {
   return (
@@ -324,7 +324,7 @@ adsManager.setMediaCachePolicy('none' | 'icon' | 'image' | 'all');
 ### AdSettings
 
 ```js
-import { AdSettings } from 'react-native-fbads';
+import { AdSettings } from 'react-native-fbads-custom';
 ```
 
 AdSettings contains global settings for all ad controls.
@@ -477,7 +477,7 @@ Some of the API explanations were borrowed from Facebook SDK documentation.
 
 <!-- badges -->
 
-[version-badge]: https://img.shields.io/npm/v/react-native-fbads.svg?style=flat-square
-[package]: https://www.npmjs.com/package/react-native-fbads
+[version-badge]: https://img.shields.io/npm/v/react-native-fbads-custom.svg?style=flat-square
+[package]: https://www.npmjs.com/package/react-native-fbads-custom
 [chat-badge]: https://img.shields.io/discord/426714625279524876.svg?style=flat-square&colorB=758ED3
 [chat]: https://discord.gg/zwR2Cdh
